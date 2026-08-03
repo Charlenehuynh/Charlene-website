@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"/d/Charlene website/css\" \"/d/Charlene website/js\" \"/d/Charlene website/assets\")",
+      "Bash(cp \"/d/Charlene website/work profile pic.jpeg\" \"/d/Charlene website/assets/profile.jpg\")",
+      "Bash(cp \"/d/Charlene website/New_Project Manager_Charlene.pdf\" \"/d/Charlene website/assets/charlene-huynh-cv.pdf\")",
+      "Bash(pkill -f \"http.server 8765\")",
+      "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(pip install *)",
+      "Bash(python3 -)",
+      "Bash(python -)",
+      "Bash(curl *)"
+    ]
+  }
+}

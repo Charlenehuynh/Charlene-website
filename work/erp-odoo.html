@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Architecture &amp; Business Process Mapping — Charlene Huynh</title>
+<meta name="description" content="Case study: centralizing a fragmented telecom business onto one Odoo ERP structure.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html#about" class="logo">Charlene Huynh</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
+      <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section case-hero">
+    <div class="wrap">
+      <a href="../index.html#work" class="back-link">← Back to Work &amp; Project</a>
+      <p class="eyebrow">Case Study</p>
+      <h1 class="case-title">ERP Architecture &amp; Business Process Mapping (Odoo)</h1>
+      <div class="tag-row">
+        <span class="tag">Odoo ERP</span>
+        <span class="tag">Business Process Mapping</span>
+        <span class="tag">Workflow Integration</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="case-visual-wrap">
+        <svg class="diagram" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: CRM connects to Sales, which connects to Inventory and Project Management, which both connect to Accounting">
+          <g font-family="inherit">
+            <rect x="10" y="90" width="80" height="40" rx="8" class="node node-start"/>
+            <text x="50" y="114" text-anchor="middle" class="node-text">CRM</text>
+
+            <rect x="140" y="90" width="80" height="40" rx="8" class="node"/>
+            <text x="180" y="114" text-anchor="middle" class="node-text">Sales</text>
+
+            <rect x="270" y="30" width="110" height="40" rx="8" class="node"/>
+            <text x="325" y="54" text-anchor="middle" class="node-text">Inventory</text>
+
+            <rect x="270" y="150" width="110" height="40" rx="8" class="node"/>
+            <text x="325" y="168" text-anchor="middle" class="node-text" font-size="10">Project</text>
+            <text x="325" y="180" text-anchor="middle" class="node-text" font-size="10">Management</text>
+
+            <rect x="420" y="90" width="90" height="40" rx="8" class="node node-start"/>
+            <text x="465" y="114" text-anchor="middle" class="node-text">Accounting</text>
+
+            <path d="M90 110 H140" class="edge" marker-end="url(#arrow)"/>
+            <path d="M220 105 C245 90, 245 65, 270 52" class="edge" marker-end="url(#arrow)"/>
+            <path d="M220 115 C245 130, 245 155, 270 168" class="edge" marker-end="url(#arrow)"/>
+            <path d="M380 50 C405 50, 405 85, 420 100" class="edge" marker-end="url(#arrow)"/>
+            <path d="M380 168 C405 168, 405 130, 420 120" class="edge" marker-end="url(#arrow)"/>
+
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" class="arrowhead"/>
+            </marker>
+          </g>
+        </svg>
+      </div>
+
+      <div class="case-content">
+        <div class="case-block">
+          <h2>Challenge</h2>
+          <p>A 50-person telecom business relied on fragmented software and manual processes, with scattered data and limited visibility between sales, installation, and accounting.</p>
+        </div>
+        <div class="case-block">
+          <h2>Solution</h2>
+          <p>Designed and implemented a centralized Odoo ERP structure, mapping end-to-end workflow connecting CRM, Sales, Project Management, and Accounting.</p>
+        </div>
+        <div class="case-block">
+          <h2>Result</h2>
+          <p>Everything in one place — 150+ monthly invoices automated, reduced manual data entry, clearer cross-department visibility.</p>
+        </div>
+
+        <div class="case-nav-row">
+          <a href="ai-reporting.html" class="project-link">Next case study: AI Reporting Automation ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Charlene Huynh</p>
+      <p class="footer-title">IT Project &amp; Product Manager</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+33745255553">+33 7 45 25 55 53</a>
+      <a href="mailto:charlenee.huynh@gmail.com">charlenee.huynh@gmail.com</a>
+      <a href="https://linkedin.com/in/CharleneHuynh" target="_blank" rel="noopener">linkedin.com/in/CharleneHuynh</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Charlene Huynh</p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
