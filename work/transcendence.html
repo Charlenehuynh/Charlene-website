@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ft_transcendence — Charlene Huynh</title>
+<meta name="description" content="Case study: a real-time multiplayer web arena for Tic-Tac-Toe and Connect Four, built with a five-person team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=11">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html#about" class="logo">Charlene Huynh</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
+      <a href="../index.html#recommendations" class="nav-link">Recommendations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap field-wrap">
+      <aside class="field-rail">
+        <a href="../index.html#work" class="back-link">← Back to Work</a>
+        <div class="field-meta">
+          <div class="field-meta-label">Role</div>
+          <div class="field-meta-value">Product Owner / PM + Developer</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Type</div>
+          <div class="field-meta-value">Real-time multiplayer web app · team of 5</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Stack</div>
+          <div class="field-meta-value">React · Fastify · SQLite (Prisma) · WebSockets · Docker</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Skills</div>
+          <div class="tag-row">
+            <span class="tag">Product Management</span>
+            <span class="tag">React</span>
+            <span class="tag">E2E Testing</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="field-main">
+        <p class="eyebrow">Team Project — 42 School</p>
+        <h1 class="case-title field-title">ft_transcendence</h1>
+        <p class="field-lede">A real-time multiplayer web arena for Tic-Tac-Toe and Connect Four, built with a five-person team — from a frozen API contract to a fully defended, deployed product.</p>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">01</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Problem</p>
+            <h2 class="field-step-heading">An open brief, five people, one deadline</h2>
+            <p>The subject doesn't specify what to build — just a menu of optional feature modules worth points, with a 14-point minimum to pass. Five of us had to agree on a single product, split it into independently ownable pieces, and build in parallel without our code colliding or surprises appearing at integration time.</p>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">02</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Build</p>
+            <h2 class="field-step-heading">The shell, the polish, and pulling it together</h2>
+            <p>As PO/PM I owned the parts that turn five people's separate modules into one coherent product: the app shell — layout, navigation, footer — the lobby for choosing an opponent or watching a live match, the settings page, the profile and stats views, and the public leaderboard. I also wrote real Privacy Policy and Terms of Service pages with project-specific content, and an automated check that keeps the browser console clear of any JavaScript warning or error across the entire app.</p>
+            <div class="case-visual-wrap case-visual-wrap-tight field-step-visual">
+              <figure class="field-figure">
+                <img class="case-screenshot" style="max-width:280px;" src="../assets/work/transcendence-lobby.png" alt="Screenshot of the actual ft_transcendence lobby: choose Tic-Tac-Toe or Connect Four, then Play vs AI, Find opponent, or Watch">
+                <figcaption>The lobby</figcaption>
+              </figure>
+              <figure class="field-figure">
+                <img class="case-screenshot" style="max-width:280px;" src="../assets/work/transcendence-leaderboard.png" alt="Screenshot of the actual ft_transcendence leaderboard, filterable by game, ranking players by wins, matches played, and win rate">
+                <figcaption>The public leaderboard</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-marker">03</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Result</p>
+            <h2 class="field-step-heading">14 points, defended, deployed behind HTTPS</h2>
+            <div class="field-result-card">
+              <p>The finished app lets you sign up, play Tic-Tac-Toe or Connect Four live against another logged-in player or an AI opponent, spectate other people's matches, and track your stats on a public leaderboard — all served from a single Docker container behind HTTPS. Before defense, I ran a hardening pass against the real built container: concurrent sessions, a dropped connection mid-game, and a broken URL, so the demo held up under real conditions.</p>
+              <div class="field-stat-row">
+                <span class="field-stat-chip">9 modules, 14/14 points</span>
+                <span class="field-stat-chip">5-person team</span>
+                <span class="field-stat-chip">Real-time WebSockets</span>
+              </div>
+            </div>
+            <img class="case-screenshot" style="max-width:100%; margin-top:16px;" src="../assets/work/transcendence-c4.png" alt="Screenshot of the actual ft_transcendence app: a finished Connect Four match with a win result, showing Rematch and Back to lobby buttons">
+          </div>
+        </div>
+
+        <div class="case-nav-row">
+          <a href="minirt.html" class="project-link">Next case study: miniRT ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Charlene Huynh</p>
+      <p class="footer-title">IT Project &amp; Product Manager</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+33745255553">+33 7 45 25 55 53</a>
+      <a href="mailto:charlenee.huynh@gmail.com">charlenee.huynh@gmail.com</a>
+      <a href="https://linkedin.com/in/CharleneHuynh" target="_blank" rel="noopener">linkedin.com/in/CharleneHuynh</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Charlene Huynh</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js?v=11"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>miniRT — Charlene Huynh</title>
+<meta name="description" content="Case study: a raytracing engine built from scratch in C, passed with bonus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=11">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html#about" class="logo">Charlene Huynh</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
+      <a href="../index.html#recommendations" class="nav-link">Recommendations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap field-wrap">
+      <aside class="field-rail">
+        <a href="../index.html#work" class="back-link">← Back to Work</a>
+        <div class="field-meta">
+          <div class="field-meta-label">Role</div>
+          <div class="field-meta-value">Solo project — 42 School</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Type</div>
+          <div class="field-meta-value">Graphics engine, written in C</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Stack</div>
+          <div class="field-meta-value">C · minilibX · linear algebra</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Skills</div>
+          <div class="tag-row">
+            <span class="tag">C</span>
+            <span class="tag">minilibX</span>
+            <span class="tag">linear algebra</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="field-main">
+        <p class="eyebrow">Coding Project — 42 School</p>
+        <h1 class="case-title field-title">miniRT</h1>
+        <p class="field-lede">A raytracing engine built from scratch in C — casting rays pixel by pixel to render a scene defined by a simple map file: spheres, planes, and lights. Passed with bonus.</p>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">01</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Problem</p>
+            <h2 class="field-step-heading">No engine, no library — just math</h2>
+            <p>Rendering a realistic 3D scene with no game engine and no rendering library: just C, a window buffer via minilibX, and the linear algebra needed to figure out where every ray of light actually goes when it hits a sphere, a plane, or a cylinder defined in a scene map.</p>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">02</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Build</p>
+            <h2 class="field-step-heading">Casting rays, pixel by pixel</h2>
+            <p>The scene itself is just a map — a text file listing a camera, one or more lights, and objects (spheres, planes, cylinders) with their positions and colors. My renderer parses that map, then for every pixel in the viewport casts a ray into the scene, calculates its intersections with those objects, and computes lighting, shadows, and reflections at each hit point.</p>
+            <div class="case-visual-wrap case-visual-wrap-tight field-step-visual">
+              <img class="case-screenshot case-screenshot-wide" src="../assets/work/minirt-render.png" alt="Screenshot of the actual miniRT renderer output: a checkered-floor room with matte, mirror, and glass spheres, a glass cube, and colored glass cylinders, lit with soft shadows">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-marker">03</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Result</p>
+            <h2 class="field-step-heading">Passed with bonus</h2>
+            <div class="field-result-card">
+              <p>A working raytracer that reads a scene map and renders it with accurate lighting, shadows, and reflections — built entirely from first principles in C, with no external rendering library to lean on.</p>
+              <div class="field-stat-row">
+                <span class="field-stat-chip">Passed with bonus</span>
+                <span class="field-stat-chip">3D scenes, ray by ray</span>
+                <span class="field-stat-chip">Pure C, no engine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-nav-row">
+          <a href="fract-ol.html" class="project-link">Next case study: fract-ol ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Charlene Huynh</p>
+      <p class="footer-title">IT Project &amp; Product Manager</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+33745255553">+33 7 45 25 55 53</a>
+      <a href="mailto:charlenee.huynh@gmail.com">charlenee.huynh@gmail.com</a>
+      <a href="https://linkedin.com/in/CharleneHuynh" target="_blank" rel="noopener">linkedin.com/in/CharleneHuynh</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Charlene Huynh</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js?v=11"></script>
+</body>
+</html>

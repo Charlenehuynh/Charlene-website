@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Reporting Automation — Charlene Huynh</title>
 <meta name="description" content="Case study: automating weekly progress reports with Power Automate and AI.">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=11">
 </head>
 <body>
 
@@ -18,51 +21,102 @@
     <nav class="site-nav" id="siteNav">
       <a href="../index.html#about" class="nav-link">About</a>
       <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
-      <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+      <a href="../index.html#recommendations" class="nav-link">Recommendations</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="section case-hero">
-    <div class="wrap">
-      <a href="../index.html#work" class="back-link">← Back to Work &amp; Project</a>
-      <p class="eyebrow">Case Study</p>
-      <h1 class="case-title">AI Reporting Automation (Microsoft Power Automate)</h1>
-      <div class="tag-row">
-        <span class="tag">Power Automate</span>
-        <span class="tag">Jira Integration</span>
-        <span class="tag">AI/LLM Prompts</span>
-        <span class="tag">Workflow Optimization</span>
-      </div>
-    </div>
-  </section>
+  <section class="section">
+    <div class="wrap field-wrap">
+      <aside class="field-rail">
+        <a href="../index.html#work" class="back-link">← Back to Work</a>
+        <div class="field-meta">
+          <div class="field-meta-label">Role</div>
+          <div class="field-meta-value">Process Owner &amp; Prompt Designer</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Team</div>
+          <div class="field-meta-value">Dev team, weekly stakeholder update</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Systems connected</div>
+          <div class="field-meta-value">Jira · Power Automate · AI engine · Email</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Skills</div>
+          <div class="tag-row">
+            <span class="tag">Power Automate</span>
+            <span class="tag">Jira Integration</span>
+            <span class="tag">AI/LLM Prompts</span>
+            <span class="tag">Workflow Optimization</span>
+          </div>
+        </div>
+      </aside>
 
-  <section class="section" style="padding-top:0;">
-    <div class="wrap">
-      <div class="case-visual-wrap">
-        <div class="mock-flow">
-          <div class="mock-flow-title">Weekly Dev Progress Report</div>
-          <div class="mock-flow-step"><span class="mock-flow-check">✓</span>Recurrence</div>
-          <div class="mock-flow-step"><span class="mock-flow-check">✓</span>List rows present in a table</div>
-          <div class="mock-flow-step"><span class="mock-flow-check">✓</span>Apply to each</div>
-          <div class="mock-flow-step"><span class="mock-flow-check">✓</span>Run a prompt (AI)</div>
-          <div class="mock-flow-step"><span class="mock-flow-check">✓</span>Send an email</div>
-        </div>
-      </div>
+      <div class="field-main">
+        <p class="eyebrow">Case Study</p>
+        <h1 class="case-title field-title">AI Reporting Automation (Microsoft Power Automate)</h1>
+        <p class="field-lede">A four-hour weekly reporting grind, replaced by an AI summary that writes and sends itself every Friday morning.</p>
 
-      <div class="case-content">
-        <div class="case-block">
-          <h2>Challenge</h2>
-          <p>Preparing the weekly progress report meant 2+ hours going through stand-up logs, Jira tickets, and chasing developers to translate technical updates into business language.</p>
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">01</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Problem</p>
+            <h2 class="field-step-heading">Hours lost translating updates by hand</h2>
+            <p>Every week, preparing the progress report meant 2+ hours of my own time going through daily stand-up logs and Jira tickets — plus more spent chasing developers to translate technical updates into business-ready language. All in, close to a four-hour headache.</p>
+          </div>
         </div>
-        <div class="case-block">
-          <h2>Solution</h2>
-          <p>Built a Friday-morning automation: Power Automate gathers the week's completed Jira tickets and stand-up logs, feeds them into an AI engine with a custom prompt that translates engineering jargon into business language, then emails a polished summary automatically.</p>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">02</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Build</p>
+            <h2 class="field-step-heading">A Friday-morning flow that writes the report itself</h2>
+            <p>Every Friday morning, Power Automate automatically pulls the week's completed Jira tickets (via the Jira connector) and daily stand-up logs, feeding them into an AI engine. A custom prompt I designed translates the engineering jargon into clear business language, and the system instantly generates a polished weekly summary — including blockers and next steps — and emails it straight to my inbox.</p>
+            <div class="case-visual-wrap case-visual-wrap-tight case-visual-split field-step-visual">
+              <img class="case-screenshot" src="../assets/work/power-automate-flow.jpg" alt="Screenshot of the actual Power Automate flow: Recurrence, List rows present in a table, Initialize variable, Apply to each, Run a prompt, Send an email">
+              <div class="mock-email">
+                <div class="mock-email-header">
+                  <span class="mock-email-avatar">CH</span>
+                  <div>
+                    <div class="mock-email-subject">Project Milestones &amp; Progress</div>
+                    <div class="mock-email-meta">Auto-generated · Friday, 9:00 AM</div>
+                  </div>
+                </div>
+                <ul class="mock-email-list">
+                  <li>Backend API integration for the CRM module finalized — 75% overall progress</li>
+                  <li>Legacy database migration to staging 60% complete, validation ongoing</li>
+                </ul>
+                <div class="mock-email-section">Operational Blockers</div>
+                <ul class="mock-email-list">
+                  <li>"Submit" button functionality blocked, impacting front-end delivery</li>
+                </ul>
+                <div class="mock-email-section">Management Action Plan</div>
+                <ul class="mock-email-list">
+                  <li>Collaborate with front-end team to resolve blocker</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="case-block">
-          <h2>Result</h2>
-          <p>Turned a four-hour task into a zero-minute process — developers stay focused on code, stakeholders get a high-quality update.</p>
+
+        <div class="field-step">
+          <div class="field-marker">03</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Result</p>
+            <h2 class="field-step-heading">Zero-minute reporting, every Friday</h2>
+            <div class="field-result-card">
+              <p>We turned that four-hour weekly headache into a zero-minute process. Developers stay focused on their code, and stakeholders get a high-quality update every Friday without anyone chasing anyone.</p>
+              <div class="field-stat-row">
+                <span class="field-stat-chip">~4 hrs saved / week</span>
+                <span class="field-stat-chip">Fully automated, every Friday</span>
+                <span class="field-stat-chip">Zero manual chasing</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="case-nav-row">
@@ -88,6 +142,11 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js?v=11"></script>
 </body>
 </html>
