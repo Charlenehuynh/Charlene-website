@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Data Migration Clean-up — Charlene Huynh</title>
+<meta name="description" content="Case study: turning each branch's sales sheets into one clean, Odoo-ready product list with an Excel VBA macro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=22">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html#about" class="logo">Charlene Huynh</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
+      <a href="../index.html#recommendations" class="nav-link">Recommendations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap field-wrap">
+      <aside class="field-rail">
+        <a href="../index.html#work" class="back-link">← Back to Work</a>
+        <div class="field-meta">
+          <div class="field-meta-label">Role</div>
+          <div class="field-meta-value">Business Analyst &amp; Developer</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Context</div>
+          <div class="field-meta-value">Odoo ERP migration · auto &amp; marine parts distributor, 4 branches</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Data</div>
+          <div class="field-meta-value">Anonymized recreation: names and figures invented, problems and logic real</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Skills</div>
+          <div class="tag-row">
+            <span class="tag">Excel VBA</span>
+            <span class="tag">Data Cleansing</span>
+            <span class="tag">Data Migration</span>
+            <span class="tag">Business Rules</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="field-main">
+        <p class="eyebrow">Case Study</p>
+        <h1 class="case-title field-title">ERP Data Migration Clean-up (Excel VBA)</h1>
+        <p class="field-lede">Each branch's everyday sales sheets, turned into one clean product list ready to import into Odoo ERP.</p>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">01</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Problem</p>
+            <h2 class="field-step-heading">Sheets built for selling, not for importing</h2>
+            <p>Each of our four branches kept its own Excel sheets as a quick sales reference: check stock, quote prices and give customers part specifications. For that job they worked fine. But they were never built as a database: the same part was listed on more than one tab, often at different prices, names were typed in different ways, and some rows had no code or price.</p>
+            <p>When we moved to Odoo ERP, this data couldn't be imported as it was. It had to become one clean, reliable product list first, and there were <strong>over 10,000 unique products</strong>. Checking each one by hand would have taken far too long and missed our go-live deadline, so I automated it.</p>
+            <figure class="field-figure">
+              <div class="sheet-scroll">
+                <table class="sheet-table">
+                  <thead>
+                    <tr><th>Item</th><th>Code</th><th>WH</th><th>Tier</th><th>Stock</th><th>Price</th><th>Issue</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="sheet-brand"><td colspan="7">ATLAS</td></tr>
+                    <tr><td>AT101 / ATLAS 1.8L</td><td>29772-6F</td><td>BH</td><td>STD</td><td>34</td><td>669</td><td></td></tr>
+                    <tr><td>AT102 / ATLAS 1.2L</td><td>14914-3F</td><td>QN</td><td>STD</td><td>158</td><td>729</td><td></td></tr>
+                    <tr class="sheet-dup"><td>AT102 / ATLAS 1.2L</td><td>14914-3F</td><td>QN</td><td>STD</td><td>55</td><td>816</td><td>Duplicate</td></tr>
+                    <tr class="sheet-brand"><td colspan="7">NORDIC</td></tr>
+                    <tr><td>NO101 / NORDIC 3.0L</td><td>64804-4F</td><td>TP</td><td>STD</td><td>36</td><td>721</td><td></td></tr>
+                    <tr class="sheet-format"><td>&nbsp;no101 / nordic 3.0l</td><td>64804-4f</td><td>tp</td><td>std</td><td>142</td><td>685</td><td>Typed differently</td></tr>
+                    <tr class="sheet-brand"><td colspan="7">FALCON</td></tr>
+                    <tr class="sheet-missing"><td>FA108 / FALCON 3.0L</td><td class="sheet-empty"></td><td>NPR</td><td>STD</td><td>69</td><td>181</td><td>Missing code</td></tr>
+                    <tr class="sheet-missing"><td>FA109 / FALCON 0.7L</td><td>27444-5F</td><td>TP</td><td>STD</td><td>77</td><td class="sheet-empty"></td><td>Missing price</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <figcaption>Excerpt from a raw branch sheet: brand names sit in grey header rows, and the same part shows up twice or typed another way.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">02</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Build</p>
+            <h2 class="field-step-heading">One click, rules agreed with the business</h2>
+            <p>I built a VBA macro that cleans and combines every tab in one run. The rules came from the business, not from the code:</p>
+            <ol class="rule-list">
+              <li><strong>Read every tab row by row</strong>, carrying the brand down from its header row.</li>
+              <li><strong>Never guess.</strong> A missing code or price goes to a review list for a person to check, because a guessed price silently corrupts reporting.</li>
+              <li><strong>Standardize names</strong> by trimming spaces and uppercasing, so “no101” and “NO101” are recognised as one part.</li>
+              <li><strong>Merge duplicates</strong> into one row, keeping the higher price.</li>
+            </ol>
+            <p class="field-note"><strong>Why VBA, not Power Query?</strong> The rules branch depending on the data, and the output goes into fixed places. Power Query is better suited to recurring file imports.</p>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-marker">03</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Result</p>
+            <h2 class="field-step-heading">One click, from messy sheets to import-ready</h2>
+            <p>Clicking <strong>Run Clean-Up</strong> does the whole job in one go: it reads every branch tab, cleans and merges the parts, sets aside anything that can't be trusted, and checks its own totals. A second button clears the output, so it can be re-run any time the sheets change.</p>
+            <div class="clean-stats">
+              <div class="clean-stat"><span class="clean-stat-num">68</span><span class="clean-stat-label">Raw rows read</span></div>
+              <div class="clean-stat clean-stat-ok"><span class="clean-stat-num">52</span><span class="clean-stat-label">Clean parts</span></div>
+              <div class="clean-stat clean-stat-dup"><span class="clean-stat-num">11</span><span class="clean-stat-label">Duplicates merged</span></div>
+              <div class="clean-stat clean-stat-review"><span class="clean-stat-num">5</span><span class="clean-stat-label">Sent to review</span></div>
+              <div class="clean-stat clean-stat-check"><span class="clean-stat-num">MATCH</span><span class="clean-stat-label">Check</span></div>
+            </div>
+            <figure class="field-figure">
+              <div class="output-grid">
+                <div>
+                  <p class="output-label output-label-ok">Clean: one row per part, ready for Odoo</p>
+                  <div class="sheet-scroll">
+                    <table class="sheet-table out-table">
+                      <thead><tr><th>SKU</th><th>Item</th><th>Price</th><th>Merged</th></tr></thead>
+                      <tbody>
+                        <tr><td>29772-6F-STD</td><td>AT101 / ATLAS</td><td>669</td><td>0</td></tr>
+                        <tr><td>14914-3F-STD</td><td>AT102 / ATLAS</td><td class="kpi-up">816</td><td>1</td></tr>
+                        <tr><td>64804-4F-STD</td><td>NO101 / NORDIC</td><td class="kpi-up">721</td><td>1</td></tr>
+                        <tr><td>13342-3F-0.50</td><td>KE104 / KESTREL</td><td class="kpi-up">522</td><td>1</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <p class="output-label output-label-review">Needs review: not guessed</p>
+                  <div class="sheet-scroll">
+                    <table class="sheet-table out-table">
+                      <thead><tr><th>Item</th><th>Reason</th></tr></thead>
+                      <tbody>
+                        <tr><td>KE108 / KESTREL</td><td>Missing code</td></tr>
+                        <tr><td>SO108 / SOLARIS</td><td>Missing price</td></tr>
+                        <tr><td>FA108 / FALCON</td><td>Missing code</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Excerpt of the output. Each duplicate pair became one row at the higher price: AT102 kept 816 from its second entry, KE104 kept its original 522.</figcaption>
+            </figure>
+            <div class="field-result-card">
+              <p>Out of 68 raw rows, the macro outputs <strong>52 clean records</strong> for Odoo, merges <strong>11 duplicates</strong> using the pricing rule, and flags <strong>5 rows</strong> for a person to check. A built-in reconciliation check confirms 52 + 11 + 5 = 68, so nothing ever disappears silently on the way into the new system.</p>
+              <p>The demo uses 68 rows; the real migration ran the same logic over more than 10,000 unique products across the four branches, in time for go-live.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-nav-row">
+          <a href="weekly-business-review.html" class="project-link">Next case study: Weekly Business Review Automation ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Charlene Huynh</p>
+      <p class="footer-title">IT Project Manager &amp; Business Analyst</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+33745255553">+33 7 45 25 55 53</a>
+      <a href="mailto:charlenee.huynh@gmail.com">charlenee.huynh@gmail.com</a>
+      <a href="https://linkedin.com/in/CharleneHuynh" target="_blank" rel="noopener">linkedin.com/in/CharleneHuynh</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Charlene Huynh</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js?v=22"></script>
+</body>
+</html>

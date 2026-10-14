@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Business Review Automation — Charlene Huynh</title>
+<meta name="description" content="Case study: combining three messy weekly sources into one refreshable team and market report with Power Query.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=22">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html#about" class="logo">Charlene Huynh</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="../index.html#about" class="nav-link">About</a>
+      <a href="../index.html#work" class="nav-link">Work &amp; Project</a>
+      <a href="../index.html#recommendations" class="nav-link">Recommendations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap field-wrap">
+      <aside class="field-rail">
+        <a href="../index.html#work" class="back-link">← Back to Work</a>
+        <div class="field-meta">
+          <div class="field-meta-label">Role</div>
+          <div class="field-meta-value">Team Lead &amp; Report Owner</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Context</div>
+          <div class="field-meta-value">Weekly business review for a sales market of 3 teams</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Data</div>
+          <div class="field-meta-value">Anonymized recreation: names and figures invented, problems and logic real</div>
+        </div>
+        <div class="field-meta">
+          <div class="field-meta-label">Skills</div>
+          <div class="tag-row">
+            <span class="tag">Power Query</span>
+            <span class="tag">Excel</span>
+            <span class="tag">KPI Reporting</span>
+            <span class="tag">Data Modeling</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="field-main">
+        <p class="eyebrow">Case Study</p>
+        <h1 class="case-title field-title">Weekly Business Review Automation (Power Query)</h1>
+        <p class="field-lede">Three messy weekly sources, combined into one team and market report that updates with a single refresh.</p>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">01</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Problem</p>
+            <h2 class="field-step-heading">Three sources, copied by hand every week</h2>
+            <p>Every week there was a Business Review where I had to create a report and present how my team and the whole market were doing. Building it meant copying by hand from three different kinds of source. It took <strong>over an hour each week</strong>, and the layout broke whenever someone edited a sheet.</p>
+            <div class="source-grid">
+              <div class="source-card">
+                <p class="source-kind">Google Sheets · daily</p>
+                <p class="source-name">Agents' call trackers</p>
+                <p class="source-desc">1st and 2nd successful calls per day, customer book and target per agent, one block per team.</p>
+                <div class="source-mini"><span>Agent</span><span>Mon</span><span>Tue</span><i>Agent 18</i><i>1</i><i class="off">OFF</i></div>
+              </div>
+              <div class="source-card">
+                <p class="source-kind">QA team's file · monthly</p>
+                <p class="source-name">Quality scores</p>
+                <p class="source-desc">Up to 4 tests per agent per month and a total average, for every agent in the market.</p>
+                <div class="source-mini"><span>Agent</span><span>Test 1</span><span>Avg</span><i>Agent 18</i><i>96%</i><i>95.2%</i></div>
+              </div>
+              <div class="source-card">
+                <p class="source-kind">Tableau export · weekly</p>
+                <p class="source-name">Solution actions</p>
+                <p class="source-desc">Solutions pitched and actioned per agent, with extra columns and unknown rows.</p>
+                <div class="source-mini"><span>Agent</span><span>Pitched</span><span>Rate</span><i>Agent 18</i><i>82</i><i>3.7%</i></div>
+              </div>
+            </div>
+            <p>The trackers couldn't be trusted to add up either: days off, empty customer books and targets, and numbers typed as text, which the sheet's own totals silently skipped.</p>
+            <figure class="field-figure">
+              <div class="sheet-scroll">
+                <table class="sheet-table">
+                  <thead>
+                    <tr><th>Agent</th><th>Book</th><th>Mon 1st</th><th>Mon 2nd</th><th>Tue 1st</th><th>Tue 2nd</th><th>Issue</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="sheet-brand"><td colspan="7">TEAM C</td></tr>
+                    <tr><td>Agent 18</td><td>148</td><td>1</td><td>0</td><td class="sheet-off">OFF</td><td class="sheet-off">OFF</td><td></td></tr>
+                    <tr class="sheet-missing"><td>Agent 19</td><td class="sheet-empty"></td><td>0</td><td>1</td><td>1</td><td></td><td>Empty book</td></tr>
+                    <tr class="sheet-format"><td>Agent 20</td><td>146</td><td class="sheet-text">'2</td><td></td><td>0</td><td>1</td><td>Number typed as text</td></tr>
+                    <tr class="sheet-total"><td>TOTAL</td><td>294</td><td class="sheet-wrong">1</td><td>1</td><td>1</td><td>1</td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <figcaption>Illustrative tracker excerpt: the sheet's TOTAL shows 1 first call on Monday, but there were 3. The text “2” was skipped.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-step-rail"></div>
+          <div class="field-marker">02</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Build</p>
+            <h2 class="field-step-heading">Five steps from raw files to finished report</h2>
+            <p>To automate this, here's what I did. Usually each team's tracker, the QA file and the Tableau export are separate files, so I just save the new ones into one folder and Power Query picks them all up. For this demo I put everything in one workbook so it's portable.</p>
+            <p>Then five Power Query steps run in order every time I click Refresh:</p>
+            <ol class="pipeline">
+              <li>
+                <p class="pipeline-title">Clean the call trackers <code>Tracker_Clean</code></p>
+                <p class="pipeline-desc">Reads agents and team leads, drops TOTAL and empty rows, turns daily columns into rows, and fixes days off and numbers typed as text.</p>
+              </li>
+              <li>
+                <p class="pipeline-title">Build one row per agent <code>Agent_Report</code></p>
+                <p class="pipeline-desc">Adds up each agent's calls and joins their QA score and Tableau solutions by name.</p>
+              </li>
+              <li>
+                <p class="pipeline-title">Roll up by team and market <code>Market_Report</code></p>
+                <p class="pipeline-desc">Totals each team and the whole market against the target row.</p>
+              </li>
+              <li>
+                <p class="pipeline-title">Pick out my team <code>My_Team</code></p>
+                <p class="pipeline-desc">Shows my agents one by one; change the team lead's name to see another team.</p>
+              </li>
+              <li>
+                <p class="pipeline-title">Prepare the weekly charts <code>Weekly</code></p>
+                <p class="pipeline-desc">Week-by-week coverage against target, for the charts in the slide.</p>
+              </li>
+            </ol>
+            <p><strong>Rules built in</strong>, agreed with the team:</p>
+            <ul class="rule-list rule-list-bullets">
+              <li><strong>Recalculate, don't trust.</strong> Totals are rebuilt from the raw days, not taken from the sheet's formulas.</li>
+              <li><strong>Documented defaults.</strong> An empty book counts as 150 customers and an empty target as 80% of the book, agreed with the team, instead of silently becoming zero.</li>
+              <li><strong>Weight rates properly.</strong> A team's solution rate is total actioned ÷ total pitched, not an average of agents' rates, so 300 pitches count for more than 60.</li>
+            </ul>
+            <p class="field-note"><strong>Why Power Query, not VBA?</strong> Importing and reshaping the same three files every week is repeatable and standard, so a one-click refresh fits. Branching judgment rules, like the <a href="erp-data-cleanup.html">ERP data clean-up</a>, suit VBA better.</p>
+          </div>
+        </div>
+
+        <div class="field-step">
+          <div class="field-marker">03</div>
+          <div class="field-step-content">
+            <p class="field-step-label">The Result</p>
+            <h2 class="field-step-heading">One refresh, ready for the weekly slide</h2>
+            <p>Data › Refresh All now produces my team agent by agent, the market team by team, each KPI green or red against target, plus the coverage charts that went into the weekly slide.</p>
+            <figure class="field-figure">
+              <div class="sheet-scroll">
+                <table class="sheet-table report-table">
+                  <thead>
+                    <tr><th>Market, quarter to date</th><th>1st Call</th><th>2nd Call</th><th>QA Score</th><th>Solution Actions</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="report-target"><td>Target</td><td>55.2%</td><td>24.2%</td><td>90.0%</td><td>6.0%</td></tr>
+                    <tr><td>Team A</td><td class="kpi-up">66.0%</td><td class="kpi-up">37.4%</td><td class="kpi-up">91.5%</td><td class="kpi-down">5.8%</td></tr>
+                    <tr><td>Team B</td><td class="kpi-up">55.8%</td><td class="kpi-up">30.4%</td><td class="kpi-down">89.7%</td><td class="kpi-up">7.0%</td></tr>
+                    <tr><td>Team C (my team)</td><td class="kpi-down">47.0%</td><td class="kpi-down">22.3%</td><td class="kpi-up">92.3%</td><td class="kpi-up">6.3%</td></tr>
+                    <tr class="report-market"><td>Market</td><td class="kpi-up">56.3%</td><td class="kpi-up">30.1%</td><td class="kpi-up">91.1%</td><td class="kpi-up">6.4%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </figure>
+            <figure class="field-figure">
+              <div class="chart-box">
+                <div class="chart-legend"><span class="lg-team">My team</span><span class="lg-market">Market</span><span class="lg-target">My team target</span></div>
+                <svg class="glide-chart" viewBox="0 0 600 250" role="img" aria-label="1st call coverage by week: my team reaches 47.0% by week 9 against a 55.8% target; the market reaches 56.3%.">
+                  <line class="grid" x1="50" y1="220" x2="580" y2="220"/>
+                  <line class="grid" x1="50" y1="175.6" x2="580" y2="175.6"/>
+                  <line class="grid" x1="50" y1="131.1" x2="580" y2="131.1"/>
+                  <line class="grid" x1="50" y1="86.7" x2="580" y2="86.7"/>
+                  <line class="grid" x1="50" y1="42.2" x2="580" y2="42.2"/>
+                  <text class="axis" x="40" y="224" text-anchor="end">0%</text>
+                  <text class="axis" x="40" y="179.6" text-anchor="end">20%</text>
+                  <text class="axis" x="40" y="135.1" text-anchor="end">40%</text>
+                  <text class="axis" x="40" y="90.7" text-anchor="end">60%</text>
+                  <text class="axis" x="40" y="46.2" text-anchor="end">80%</text>
+                  <text class="axis" x="50" y="240" text-anchor="middle">Wk 1</text>
+                  <text class="axis" x="226.7" y="240" text-anchor="middle">5</text>
+                  <text class="axis" x="403.3" y="240" text-anchor="middle">9</text>
+                  <text class="axis" x="580" y="240" text-anchor="middle">13</text>
+                  <polyline class="line-target" points="50,206.2 94.2,192.4 138.3,178.7 182.5,164.9 226.7,151.1 270.8,137.3 315,123.6 359.2,109.8 403.3,96 447.5,82.2 491.7,68.4 535.8,54.7 580,40.9"/>
+                  <polyline class="line-market" points="50,206.9 94.2,194 138.3,180.2 182.5,166 226.7,151.3 270.8,137.8 315,122.7 359.2,109.6 403.3,94.9"/>
+                  <polyline class="line-team" points="50,210.4 94.2,200.2 138.3,187.3 182.5,175.6 226.7,162.4 270.8,152.2 315,140.2 359.2,128.2 403.3,115.6"/>
+                  <circle class="dot-team" cx="403.3" cy="115.6" r="4"/>
+                  <text class="label" x="414" y="128" fill="#574FB5">47.0%</text>
+                  <text class="label" x="396" y="84" text-anchor="end" fill="#7A7486">56.3%</text>
+                </svg>
+              </div>
+              <figcaption>1st call coverage by week. My team is behind its glidepath; the market is ahead. Switching “My team” to another team lead and refreshing redraws the team table and charts.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-nav-row">
+          <a href="erp-odoo.html" class="project-link">Next case study: ERP Architecture &amp; Business Process Mapping ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Charlene Huynh</p>
+      <p class="footer-title">IT Project Manager &amp; Business Analyst</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+33745255553">+33 7 45 25 55 53</a>
+      <a href="mailto:charlenee.huynh@gmail.com">charlenee.huynh@gmail.com</a>
+      <a href="https://linkedin.com/in/CharleneHuynh" target="_blank" rel="noopener">linkedin.com/in/CharleneHuynh</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Charlene Huynh</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script src="../js/main.js?v=22"></script>
+</body>
+</html>

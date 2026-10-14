@@ -85,6 +85,55 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", setActiveLink, { passive: true });
   setActiveLink();
 
+  // ----- work carousel arrows ----------------------------------------------
+  // The carousel is a plain horizontal scroller, so it still works by swipe or
+  // trackpad if this never runs; the buttons just step one card at a time.
+  document.querySelectorAll(".carousel-wrap").forEach(function (wrap) {
+    var track = wrap.querySelector(".project-carousel");
+    if (!track) return;
+    var prev = wrap.querySelector(".carousel-prev");
+    var next = wrap.querySelector(".carousel-next");
+    var count = wrap.nextElementSibling && wrap.nextElementSibling.classList.contains("carousel-count")
+      ? wrap.nextElementSibling : null;
+    var cards = track.children;
+
+    function step() {
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return cards[0].getBoundingClientRect().width + gap;
+    }
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      // an arrow only shows when there is something in that direction
+      prev.hidden = track.scrollLeft <= 1;
+      next.hidden = track.scrollLeft >= max - 1;
+      if (!count) return;
+      if (max <= 1) { count.textContent = ""; return; }
+      var first = Math.round(track.scrollLeft / step());
+      var visible = Math.max(1, Math.round(track.clientWidth / step()));
+      var last = Math.min(cards.length, first + visible);
+      count.textContent = "Showing " + (first + 1) + (last > first + 1 ? "–" + last : "") + " of " + cards.length;
+    }
+
+    // Remember where a click is heading, so a second quick click adds to it
+    // instead of being lost while the smooth scroll is still moving.
+    var target = null, settle;
+    [prev, next].forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var lastIndex = Math.round((track.scrollWidth - track.clientWidth) / step());
+        var from = target !== null ? target : Math.round(track.scrollLeft / step());
+        target = Math.max(0, Math.min(lastIndex, from + Number(btn.dataset.dir)));
+        track.scrollTo({ left: target * step(), behavior: "smooth" });
+      });
+    });
+    track.addEventListener("scroll", function () {
+      update();
+      clearTimeout(settle);
+      settle = setTimeout(function () { target = null; }, 150);
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+
   // ----- case study screenshot lightbox -----------------------------------
   (function () {
     var lightbox = document.getElementById("lightbox");

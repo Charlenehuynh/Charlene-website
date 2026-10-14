@@ -6,12 +6,12 @@ Site structure: About | Work & Project | Testimonials — plus CV section (see n
 ## About
 
 **Name:** Charlene Huynh
-**Title:** IT Project & Product Manager
+**Title:** IT Project Manager & Business Analyst
 **Location:** Esch-sur-Alzette, Luxembourg
 **Status:** Authorized to work in the EU · Available immediately
 
 **Bio:**
-I have a confession: I hate inefficiency. It's kind of become my whole career. Over 8 years across five countries, I've made a habit of finding the mundane and automating it, whether that's scaling Meta operations from 15 to 100+ people, rolling out cloud ERP to 150+ users, or cutting reporting time by 70% with Power Automate. I just can't leave a messy process alone. These days I'm at 42 School and AI Academy sharpening my technical edge, because efficient only counts if people actually adopt it.
+I have a confession: I hate inefficiency. It's kind of become my whole career. Over 8 years across five countries, I've delivered ERP, CRM and AI digital transformation projects and made a habit of finding the mundane and automating it, whether that's scaling Meta operations from 15 to 100+ people, rolling out cloud ERP to 150+ users, or cutting reporting time by 70% with Power Automate. I just can't leave a messy process alone. These days I'm at 42 School and AI Academy sharpening my technical edge, because efficient only counts if people actually adopt it.
 
 **Positioning line:** I help scaling teams replace manual chaos with automated systems — using project management, process design, and AI most PMs can't build themselves.
 
@@ -28,10 +28,10 @@ I have a confession: I hate inefficiency. It's kind of become my whole career. O
 
 **Core Competencies**
 - **Industries:** AdTech & Marketing (Facebook) · HR Tech & Recruitment · Automotive & Marine (OEM/Aftermarket) · IoT & SaaS
-- **PM:** Agile & Scrum · Product Discovery · PRINCE2 · Roadmapping · ERP · Budget & Risk
+- **PM:** Agile & Scrum · Product Discovery · Business Analysis · PRINCE2 · WBS · Roadmapping · ERP · Budget & Risk
 - **Automation & AI:** Generative AI · Prompt engineering · Power Automate · n8n · Chatbot
 - **Data & Analytics:** SQL · Power BI · Tableau · MongoDB · VBA · Power Query · Excel
-- **Tools & Platforms:** JIRA · Asana · SAP · Trello · Zoho · Microsoft Project
+- **Tools & Platforms:** JIRA · Odoo · SAP · Trello · Zoho · Microsoft Project
 
 **Highlights**
 - **ERP Cloud Transformation** — Led a company-wide Odoo ERP rollout, migrating 30,000+ records and automating workflows for 4 regional branches and 150+ users.
@@ -44,25 +44,40 @@ I have a confession: I hate inefficiency. It's kind of become my whole career. O
 - Teach visual programming and AI courses to students in French.
 - Design interactive, project-based lessons to develop logical thinking.
 
+[Education]
+
+- **Master of Database Architecture and Data** · 42 School, Belval · 2024–Present
+  Project-based programming in C, C++, Python and JavaScript; led a 5-person team as Product Owner on a real-time web app.
+- **AI Academy** · DLH Luxembourg · Apr 2025
+  7-month AI specialization in Python, data and machine learning, with a capstone project.
+- **CS50: Introduction to Computer Science** · Harvard University · 2024
+  Algorithms and data structures in C, plus Python, SQL and web development.
+
 *Project Manager / Sales Team Lead @Facebook (Meta)* — TDCX, Bangkok, Thailand (Dec 2021–Jun 2023)
+_Meta's global service partner, 14,000+ employees across 12 locations._
 - Stepped up as interim Project Manager, implemented new internal tools and revamped Tableau dashboards.
 - Automated weekly/quarterly reports using Power Automate, VBA, Power Query — cut manual data time by 70%.
 - Scaled account operations from 15 to 100+ personnel in 2 years, leading 18 experts on a $10M+ portfolio; earned Bangkok's Highest Achievement Team Award.
 
 *Project Manager & Business Analyst (Cloud SaaS)* — Kalibrr Inc (Y Combinator portfolio), Manila, Philippines (Jun 2019–Nov 2020)
+_HR-tech startup (50 employees) providing SaaS recruitment software across 4 countries._
 - Launched cloud recruiting platform as first local hire; full setup in 90 days (legal, office, hiring, SOPs).
-- Managed 3–7 concurrent IT projects, coordinating with IT teams to deliver on time.
+- Led client onboarding for 3–7 concurrent SaaS implementations, gathering and structuring business requirements from client stakeholders and coordinating with IT teams to deliver on time.
 - Orchestrated COVID-19 remote-work transition (hardware, logistics, deployment).
 
 *IT Project & Product Manager (Odoo ERP)* — Thanh Phat Hung Ltd., Ho Chi Minh City, Vietnam (Jul 2017–Jun 2019)
-- Led product discovery and implementation of a cloud Odoo ERP system for 150+ employees across 4 branches.
-- Managed end-to-end roadmap with a cross-functional team of 10.
+_One of Vietnam's largest auto & marine spare parts distributors, with 4 branches._
+- Led product discovery and implementation of a cloud Odoo ERP system for 150+ employees (Finance, Sales, Logistics, Tax, Warehouse) across 4 branches.
+- Acted as functional administrator, taking the rollout from requirements elicitation through acceptance criteria and go-live with a cross-functional team of 10.
 - Drove change management/training, reaching 90%+ user adoption within 3 months.
 
 *Project Coordinator (NGO)* — CyberCare Youth, Malaysia (Volunteer, 2016–2018)
+_Youth initiative NGO under Malaysia's Ministry of Youth._
 - Coordinated logistics/scheduling/comms for youth programs supporting 50+ underprivileged youth and refugees annually.
 
-*Other:* Inside Sales Manager (SaaS & IoT) — Trace+ Tech, Singapore (2016–2017) · Content Review Analyst — Accenture, Malaysia (2016–2017)
+*Other Experience:*
+- Inside Sales Manager (SaaS & IoT) — Trace+ Tech, Singapore (2020–2021)
+- Content Review Analyst — Accenture, Malaysia (2016–2017)
 
 **Education**
 - Master of Database Architecture and Data — 42 School, Belval, Luxembourg (2024–Present) — Focus: C, C++, Python, JavaScript
@@ -82,10 +97,29 @@ I have a confession: I hate inefficiency. It's kind of become my whole career. O
 ### Project 1: ERP Architecture & Business Process Mapping (Odoo)
 **Skills:** Odoo ERP · Business Process Mapping · Workflow Integration
 
+- **Context:** Consulting engagement.
 - **Challenge:** A 50-person telecom business relied on fragmented software and manual processes, with scattered data and limited visibility between sales, installation, and accounting.
 - **Solution:** Designed and implemented a centralized Odoo ERP structure, mapping end-to-end workflow connecting CRM, Sales, Project Management, and Accounting.
 - **Result:** Everything in one place — 150+ monthly invoices automated, reduced manual data entry, clearer cross-department visibility.
 - *Visual asset: workflow diagram (CRM → Sales → Inventory/Project Management → Accounting) — reuse the diagram from the source PDF.*
+
+### Project 1b: ERP Data Migration Clean-up (Excel VBA)
+**Skills:** Excel VBA · Data Cleansing · Data Migration · Business Rules
+*Anonymized recreation: names and figures invented, problems and logic real.*
+
+- **Challenge:** Each of the four branches kept its own Excel sheets as a quick sales reference (stock, prices, part specs for customers). Fine for selling, but never built as a database: the same part listed on more than one tab at different prices, names typed in different ways, missing codes or prices. Moving to Odoo ERP, the data had to become one clean, reliable product list first: over 10,000 unique products, too many to check by hand without missing the go-live deadline, so I automated it.
+- **Solution:** One-click VBA macro with rules agreed with the business: read every tab row by row carrying the brand down; never guess (missing code/price → review list); trim + uppercase names; merge duplicates keeping the higher price. VBA over Power Query because the rules branch and the output goes into fixed places.
+- **Result:** 68 raw rows → 52 clean parts · 11 duplicates merged · 5 sent to review; built-in check = MATCH, so nothing is lost on the way into the new system. Real migration: same logic over 10,000+ unique products across 4 branches, in time for go-live.
+- *Visuals: built in HTML (raw sheet excerpt with colour-coded issues; result stat tiles).*
+
+### Project 1c: Weekly Business Review Automation (Power Query)
+**Skills:** Power Query · Excel · KPI Reporting · Data Modeling
+*Anonymized recreation: names and figures invented, problems and logic real.*
+
+- **Challenge:** Every week there was a Business Review where I had to create a report and present how my team and the whole market were doing. Building it by hand took 1+ hour, copying from three kinds of source: agents' daily call trackers, the QA team's monthly scores, and the Tableau export of solution actions. The layout broke whenever someone edited a sheet, and the trackers didn't add up (days off, empty books and targets, numbers typed as text that the sheet's totals skipped).
+- **Solution:** Five Power Query steps, run in order on every refresh: (1) clean the call trackers, (2) build one row per agent with QA + Tableau joined by name, (3) roll up by team and market, (4) pick out my team (switchable), (5) prepare the weekly coverage charts. In real use each team tracker and export is a separate file saved into one folder that Power Query reads; the demo keeps everything in one workbook so it is portable. Rules: recalculate totals from raw days; documented defaults (empty book = 150 customers, empty target = 80% of book); team rates = total actioned ÷ total pitched, not an average of rates. Power Query over VBA because the weekly import/reshape is repeatable and standard.
+- **Result:** One Refresh All → my team agent by agent + market by team, green/red vs target, plus week-by-week coverage charts for the weekly slide. Switching "My team" redraws the team table and charts.
+- *Visuals: built in HTML (tracker excerpt, market KPI table, coverage chart as SVG). Figures from the demo workbook PQ_Demo_WBR.xlsx.*
 
 ### Project 2: AI Reporting Automation (Microsoft Power Automate)
 **Skills:** Microsoft Power Automate · Jira Integration · AI/LLM Prompts · Workflow Optimization
